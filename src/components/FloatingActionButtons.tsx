@@ -3,8 +3,9 @@
 import { useState, useEffect } from 'react';
 import { ArrowUp, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import { cn } from '@/lib/utils';
+import { Dialog, DialogTrigger } from '@/components/ui/dialog';
+import ChatDialog from '@/components/ChatDialog';
+
 
 export default function FloatingActionButtons() {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -41,12 +42,15 @@ export default function FloatingActionButtons() {
           <ArrowUp className="h-6 w-6" />
         </Button>
       )}
-      <Button asChild size="lg" className="rounded-full shadow-lg h-14 px-5">
-        <Link href="#contact" className="flex items-center">
-          <MessageSquare className="mr-2 h-5 w-5" />
-          Chat with us
-        </Link>
-      </Button>
+      <Dialog>
+        <DialogTrigger asChild>
+            <Button size="lg" className="rounded-full shadow-lg h-14 px-5">
+            <MessageSquare className="mr-2 h-5 w-5" />
+            Chat with us
+            </Button>
+        </DialogTrigger>
+        <ChatDialog />
+      </Dialog>
     </div>
   );
 }

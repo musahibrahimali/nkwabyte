@@ -40,7 +40,7 @@ export default function Header() {
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center gap-2">
           <Zap className="h-6 w-6 text-primary" />
-          <span className="font-bold text-lg font-headline">Nkwabyte Hub</span>
+          <span className="font-bold text-lg font-headline">Nkwabyte</span>
         </Link>
 
         <div className="flex-1 hidden md:flex">
@@ -62,7 +62,7 @@ export default function Header() {
               <div className="flex flex-col gap-6 pt-10">
                 <Link href="/" className="mr-6 flex items-center gap-2">
                     <Zap className="h-6 w-6 text-primary" />
-                    <span className="font-bold text-lg font-headline">Nkwabyte Hub</span>
+                    <span className="font-bold text-lg font-headline">Nkwabyte</span>
                 </Link>
                 <NavLinks className="flex-col items-start text-lg" />
               </div>

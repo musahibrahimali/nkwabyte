@@ -32,7 +32,7 @@ export default function AboutPage() {
     <div className="container py-12 md:py-20">
       <section className="text-center max-w-4xl mx-auto mb-16 md:mb-24">
         <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tighter mb-4">
-          About Nkwabyte Hub
+          About Nkwabyte
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground">
           We are a team of passionate innovators, developers, and strategists dedicated to building the future of technology, one solution at a time.
@@ -80,7 +80,7 @@ export default function AboutPage() {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">Meet Our Team</h2>
           <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-            The brilliant minds behind Nkwabyte Hub.
+            The brilliant minds behind Nkwabyte.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

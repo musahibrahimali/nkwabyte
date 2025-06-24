@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="space-y-6">
           <Link href="/" className="flex items-center gap-2">
             <Zap className="h-8 w-8 text-primary" />
-            <span className="text-2xl font-bold font-headline">Nkwabyte Hub</span>
+            <span className="text-2xl font-bold font-headline">Nkwabyte</span>
           </Link>
           <p className="text-muted-foreground max-w-md">
             Driving innovation through AI consulting, rapid MVP development, and transformative tech education. Let's build the future together.
@@ -34,7 +34,7 @@ export default function Footer() {
       </div>
       <div className="bg-secondary/70 py-4">
           <div className="container text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Nkwabyte Hub. All Rights Reserved.
+            © {new Date().getFullYear()} Nkwabyte. All Rights Reserved.
           </div>
       </div>
     </footer>
