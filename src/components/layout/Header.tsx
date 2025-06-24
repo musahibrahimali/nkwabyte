@@ -11,6 +11,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
   { href: '/courses', label: 'Courses' },
+  { href: '/portfolio', label: 'Portfolio' },
   { href: '/enhancer', label: 'Case Study Enhancer' },
 ];
 
