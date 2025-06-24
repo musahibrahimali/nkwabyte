@@ -9,10 +9,10 @@ import { cn } from '@/lib/utils';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About Us' },
+  { href: '/about', label: 'About' },
   { href: '/courses', label: 'Courses' },
   { href: '/portfolio', label: 'Portfolio' },
-  { href: '/enhancer', label: 'Case Study Enhancer' },
+  { href: '/enhancer', label: 'CSE' },
 ];
 
 export default function Header() {

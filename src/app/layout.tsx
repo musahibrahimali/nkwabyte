@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import FloatingActionButtons from '@/components/FloatingActionButtons';
 
 export const metadata: Metadata = {
   title: 'Nkwabyte Hub - Innovation & Tech Solutions',
@@ -26,6 +27,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <FloatingActionButtons />
         <Toaster />
       </body>
     </html>
