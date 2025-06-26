@@ -13,12 +13,13 @@ import { cn } from '@/lib/utils';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
 type Message = {
+    id: string;
     role: 'user' | 'model';
     parts: { text: string }[];
 };
 
 const initialState: { history: Message[], error: string | null } = {
-  history: [{ role: 'model', parts: [{ text: "Hello! How can I help you learn about Nkwabyte today?" }] }],
+  history: [{ id: 'init-1', role: 'model', parts: [{ text: "Hello! How can I help you learn about Nkwabyte today?" }] }],
   error: null,
 };
 
@@ -34,7 +35,7 @@ function SubmitButton() {
 function ChatMessages({ history }: { history: Message[] }) {
     const { pending } = useFormStatus();
     const messagesEndRef = useRef<HTMLDivElement>(null);
-  
+
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }, [history, pending]);
@@ -42,8 +43,8 @@ function ChatMessages({ history }: { history: Message[] }) {
     return (
         <ScrollArea className="flex-grow p-6">
             <div className="space-y-4">
-                {history.map((msg, index) => (
-                    <div key={index} className={cn('flex items-start gap-3', { 'justify-end': msg.role === 'user' })}>
+                {history.map((msg) => (
+                    <div key={msg.id} className={cn('flex items-start gap-3', { 'justify-end': msg.role === 'user' })}>
                         {msg.role === 'model' && (
                             <Avatar className="h-8 w-8 border"><AvatarFallback><Bot className="h-5 w-5"/></AvatarFallback></Avatar>
                         )}
