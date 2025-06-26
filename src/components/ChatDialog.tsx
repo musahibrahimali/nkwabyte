@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { SendHorizonal, Bot, User, Loader2 } from 'lucide-react';
 import { askNkwabyteAssistant } from '@/lib/actions';
 import { Button } from '@/components/ui/button';
@@ -72,7 +73,7 @@ function ChatMessages({ history }: { history: Message[] }) {
 }
 
 export default function ChatDialog() {
-    const [state, formAction] = useFormState(askNkwabyteAssistant, initialState);
+    const [state, formAction] = useActionState(askNkwabyteAssistant, initialState);
     const formRef = useRef<HTMLFormElement>(null);
     const { pending } = useFormStatus();
 
