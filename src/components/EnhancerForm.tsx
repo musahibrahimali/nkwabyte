@@ -49,15 +49,15 @@ export default function EnhancerForm() {
             )}
           </div>
 
-          {state?.tools?.length > 0 && (
+          {state.tools.length > 0 && (
             <div className="space-y-3 pt-4">
               <div className="flex items-center gap-2">
                 <Lightbulb className="w-5 h-5 text-primary" />
                 <h4 className="font-semibold font-headline">Suggested Tools Used:</h4>
               </div>
               <div className="flex flex-wrap gap-2">
-                {state.tools.map((tool: string, index: number) => (
-                  <Badge key={index} variant="secondary" className="text-base px-3 py-1">
+                {state.tools.map((tool: string) => (
+                  <Badge key={tool} variant="secondary" className="text-base px-3 py-1">
                     {tool}
                   </Badge>
                 ))}
