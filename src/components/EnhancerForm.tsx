@@ -1,6 +1,7 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { enhanceCaseStudyAction } from '@/lib/actions';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -24,7 +25,7 @@ function SubmitButton() {
 }
 
 export default function EnhancerForm() {
-  const [state, formAction] = useFormState(enhanceCaseStudyAction, initialState);
+  const [state, formAction] = useActionState(enhanceCaseStudyAction, initialState);
 
   return (
     <Card>
@@ -43,17 +44,19 @@ export default function EnhancerForm() {
               rows={5}
               required
             />
-             {state?.message && state.tools.length === 0 && <p className="text-sm text-destructive">{state.message}</p>}
+            {state?.message && state.tools.length === 0 && (
+              <p className="text-sm text-destructive">{state.message}</p>
+            )}
           </div>
 
-          {state?.tools && state.tools.length > 0 && (
+          {state?.tools?.length > 0 && (
             <div className="space-y-3 pt-4">
               <div className="flex items-center gap-2">
                 <Lightbulb className="w-5 h-5 text-primary" />
                 <h4 className="font-semibold font-headline">Suggested Tools Used:</h4>
               </div>
               <div className="flex flex-wrap gap-2">
-                {state.tools.map((tool, index) => (
+                {state.tools.map((tool: string, index: number) => (
                   <Badge key={index} variant="secondary" className="text-base px-3 py-1">
                     {tool}
                   </Badge>
